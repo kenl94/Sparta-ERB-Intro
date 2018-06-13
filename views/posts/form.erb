@@ -1,0 +1,23 @@
+<!-- Using the same form for new and edit -->
+
+<form action="/<%= @post[:id] %>" method="post">
+  <div>
+    <label>Title</label>
+    <input type="text" name="title" placeholder="" value="<%= @post[:title]%>">
+  </div>
+  <div>
+    <label>Description</label>
+    <textarea name="body" rows="8" cols="80" placeholder="Enter a description for your post" ><%= @post[:body]%></textarea>
+  </div>
+  <input type="submit" value="submit">
+
+<!-- This is a method override that changes our form from a post to a put -->
+
+<!-- The put will try to update regardless if new or edit and if new then it will give error -->
+
+  <!-- need to wrap in ruby, because if id exists then update, if not then don't update -->
+
+  <% if @post[:id] != "" %>
+  <input type="hidden" name="_method" value="PUT">
+  <% end %>
+</form>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title> <%= @title %></title>
+</head>
+<body>
+
+  <%= erb(:"partials/nav")%>
+
+  <!-- Ruby, yield everything from my sub folders when I ask for it -->
+
+  <%= yield %>
+</body>
+</html>
